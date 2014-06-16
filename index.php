@@ -1,6 +1,8 @@
-<?php $poklony = file_get_contents('poklony.txt'); 
+<?php
+$poklony = strlen(file_get_contents('poklony.txt'));
 if (isset($_GET['poklon'])) {
-    file_put_contents('poklony.txt', ++$poklony);
+    file_put_contents('poklony.txt', 1, FILE_APPEND | LOCK_EX);
+    $poklony++;
 }
 ?>
 <!DOCTYPE html>
